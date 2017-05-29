@@ -16,5 +16,5 @@ class Task(object):
         return self._name
 
     @property
-    def id(self):
+    def taskid(self):
         return self._taskid

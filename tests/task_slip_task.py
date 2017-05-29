@@ -16,4 +16,4 @@ class TestTask(unittest.TestCase):
         task = Task(name, taskid)
 
         self.assertEqual(name, task.name)
-        self.assertEqual(taskid, task.id)
+        self.assertEqual(taskid, task.taskid)

@@ -20,6 +20,16 @@ class Worker(object):
         else:
             raise WorkerTaskLimitException
 
+    def unassign_task(self, taskid):
+        """
+        Unassigns a task from worker and returns it.
+        :param taskid: The id of the task
+        :type taskid: str
+        """
+        for task in self._tasks:
+            if task.taskid == taskid:
+                return self._tasks.pop(self._tasks.index(task))
+
     @property
     def name(self):
         return self._name

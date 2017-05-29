@@ -7,7 +7,7 @@ python: 3.5
 branches:
   only:
     - /.*/
-    
+
 env:
   - TOXENV=py35
   - TOXENV=py34
