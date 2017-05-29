@@ -4,6 +4,10 @@
 language: python
 python: 3.5
 
+branches:
+  only:
+    - /.*/
+    
 env:
   - TOXENV=py35
   - TOXENV=py34
@@ -12,19 +16,20 @@ env:
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox
+install: pip install -r requirements.txt
 
 # command to run tests, e.g. python setup.py test
 script: tox -e ${TOXENV}
 
 # After you create the Github repo and add it to Travis, run the
 # travis_pypi_setup.py script to finish PyPI deployment setup
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: stephenfox1995
-  password:
-    secure: PLEASE_REPLACE_ME
-  on:
-    tags: true
-    repo: stephenfox1995/slip_proactive
-    condition: $TOXENV == py27
+#deploy:
+#  provider: pypi
+#  distributions: sdist bdist_wheel
+#  user: stephenfox1995
+#  password:
+#    secure: PLEASE_REPLACE_ME
+#  on:
+#    tags: true
+#    repo: stephenfox1995/slip_proactive
+#    condition: $TOXENV == py27
