@@ -23,12 +23,14 @@ class TestTask(unittest.TestCase):
             minutes=1,
             seconds=0
         )
-        task = Task(name, taskid, created_at, processing, deadline)
+        tasktype = "fooditem"
+        task = Task(name, taskid, created_at, processing, deadline, tasktype)
 
         self.assertEqual(name, task.name)
         self.assertEqual(taskid, task.taskid)
         self.assertEqual(created_at, task.created_at)
-        self.assertEqual(deadline, deadline)
+        self.assertEqual(deadline, task.deadline)
         self.assertEqual(processing, task.processing)
         release = timeutil.release_time(deadline, processing)
         self.assertEqual(release, task.release)
+        self.assertEqual(tasktype, task.tasktype)
