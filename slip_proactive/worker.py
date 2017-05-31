@@ -6,7 +6,6 @@ from .exceptions import (
 
 
 class Worker(object):
-
     def __init__(self, name, workerid, task_limit, tasktypes):
         """
         Initialize a Worker object.
